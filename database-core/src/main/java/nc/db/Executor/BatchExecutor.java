@@ -1,5 +1,7 @@
 package nc.db.Executor;
 
+import nc.db.exception.DatabaseOperationException;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +11,10 @@ import java.util.List;
 // BatchExecutor.java
 public class BatchExecutor {
     private final DataSource dataSource;
+
+    public BatchExecutor(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public int[] executeBatch(String sql, List<Object[]> paramsList) {
         try (Connection conn = dataSource.getConnection();

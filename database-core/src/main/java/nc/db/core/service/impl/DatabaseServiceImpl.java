@@ -1,6 +1,8 @@
 package nc.db.core.service.impl;
 
+import nc.db.component.CacheManager;
 import nc.db.core.service.DatabaseDao;
+import nc.db.transaction.TransactionManager;
 
 import java.util.List;
 
