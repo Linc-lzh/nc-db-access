@@ -2,6 +2,7 @@ package nc.db.core.service.impl;
 
 import javax.sql.DataSource;
 import java.util.List;
+import java.util.Map;
 
 // MySQLDatabaseImpl.java - MySQL具体实现
 public class MySQLDatabaseImpl extends AbstractDatabaseImpl {
@@ -12,8 +13,11 @@ public class MySQLDatabaseImpl extends AbstractDatabaseImpl {
     }
 
     @Override
-    public <T> List<T> query(String sql, Object[] params, Class<T> clazz) {
+    public <T> List<T> query(String sql, Map<String, Object> params, Class<T> clazz) {
+
+
         // MySQL特定的查询实现
+        String result = queryBuilder.buildSelectQuery(clazz, params);
         return null;
     }
 

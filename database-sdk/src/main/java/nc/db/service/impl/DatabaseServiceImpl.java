@@ -2,6 +2,7 @@ package nc.db.service.impl;
 
 import nc.db.component.CacheManager;
 import nc.db.core.service.DatabaseDao;
+import nc.db.pojo.LogInfo;
 import nc.db.service.DatabaseService;
 import nc.db.transaction.TransactionManager;
 
@@ -40,4 +41,8 @@ public class DatabaseServiceImpl implements DatabaseService {
     }
 
     // 其他服务方法...
+    public void main(String[] args) {
+
+//        databaseDao.query(sql, params, LogInfo.class);
+    }
 }

@@ -2,6 +2,7 @@ package nc.db.core.service.impl;
 
 import javax.sql.DataSource;
 import java.util.List;
+import java.util.Map;
 
 // PostgreSQLDatabaseImpl.java - PostgreSQL具体实现
 public class PostgreSQLDatabaseImpl extends AbstractDatabaseImpl {
@@ -12,7 +13,7 @@ public class PostgreSQLDatabaseImpl extends AbstractDatabaseImpl {
     }
 
     @Override
-    public <T> List<T> query(String sql, Object[] params, Class<T> clazz) {
+    public <T> List<T> query(String sql, Map<String, Object> params, Class<T> clazz) {
         // PostgreSQL特定的查询实现
         return null;
     }
