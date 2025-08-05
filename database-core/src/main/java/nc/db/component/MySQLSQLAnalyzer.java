@@ -8,12 +8,12 @@ public class MySQLSQLAnalyzer implements SQLAnalyzer {
     public void analyze(String sql) throws SQLSyntaxException {
         // 分析SQL语法是否合法
         if (sql == null || sql.trim().isEmpty()) {
-            throw new SQLSyntaxException("SQL cannot be empty");
+            throw new SQLSyntaxException("SQL cannot be empty", null, 0, null);
         }
 
         // 检查SQL注入风险
         if (containsSqlInjectionKeywords(sql)) {
-            throw new SQLSyntaxException("Potential SQL injection detected");
+            throw new SQLSyntaxException("Potential SQL injection detected", null, 0, null);
         }
 
         // 其他MySQL特定的语法检查...

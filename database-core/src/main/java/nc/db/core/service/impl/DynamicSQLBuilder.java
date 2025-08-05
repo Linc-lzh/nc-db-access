@@ -35,4 +35,9 @@ public class DynamicSQLBuilder {
 
         return sql.toString();
     }
+
+
+    public String getTableName(Class<?> entityClass) {
+        return null;
+    }
 }

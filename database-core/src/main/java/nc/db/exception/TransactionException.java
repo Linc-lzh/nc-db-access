@@ -7,7 +7,7 @@ public class TransactionException extends BankDatabaseException {
     }
 
     public TransactionException(String message, Throwable cause) {
-        super(message, cause);
+        super(message, cause.getMessage());
     }
 
     public TransactionException(String errorCode, String message, Throwable cause) {

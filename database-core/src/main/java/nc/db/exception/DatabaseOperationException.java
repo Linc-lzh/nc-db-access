@@ -8,6 +8,11 @@ public class DatabaseOperationException extends BankDatabaseException {
         super(errorCode, message);
     }
 
+    public DatabaseOperationException(String message, Throwable cause) {
+        super(message, cause.getMessage());
+    }
+
+
     public DatabaseOperationException(String errorCode, String message, Throwable cause) {
         super(errorCode, message, cause);
     }

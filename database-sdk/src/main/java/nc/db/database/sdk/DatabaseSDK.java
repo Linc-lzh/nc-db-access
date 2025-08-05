@@ -1,5 +1,7 @@
 package nc.db.database.sdk;
 
+import nc.db.transaction.TransactionCallback;
+
 import java.util.List;
 
 // DatabaseSDK.java - 核心接口

@@ -17,6 +17,14 @@ public class SQLSyntaxException extends BankDatabaseException {
     private final DatabaseType databaseType;
     // 标准错误码定义
     public static final String ERROR_CODE = "DB_400";
+
+
+    public SQLSyntaxException(String message, String sqlSegment, Integer position, DatabaseType databaseType) {
+        super(message, null);
+        this.sqlSegment = sqlSegment;
+        this.position = position;
+        this.databaseType = databaseType;
+    }
     public SQLSyntaxException(String sqlSegment, DatabaseType databaseType) {
         this(sqlSegment, null, databaseType, null);
     }
@@ -34,10 +42,6 @@ public class SQLSyntaxException extends BankDatabaseException {
         withContext("SQL", sqlSegment)
                 .withContext("Position", position)
                 .withContext("DBType", databaseType);
-    }
-
-    public SQLSyntaxException(String message) {
-        super(message, null);
     }
 
     private static String buildMessage(String sql, Integer pos, DatabaseType dbType) {

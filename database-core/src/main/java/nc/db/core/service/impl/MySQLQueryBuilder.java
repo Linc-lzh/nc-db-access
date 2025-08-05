@@ -1,12 +1,12 @@
 package nc.db.core.service.impl;
 
-import nc.db.component.QueryBuilder;
+import nc.db.core.service.QueryBuilder;
 
 import java.util.Iterator;
 import java.util.Map;
 
 // MySQLQueryBuilder.java
-public class MySQLQueryBuilder implements QueryBuilder {
+public class MySQLQueryBuilder extends DynamicSQLBuilder implements QueryBuilder  {
     @Override
     public String buildSelectQuery(Class<?> entityClass, Map<String, Object> conditions) {
         StringBuilder query = new StringBuilder("SELECT * FROM ");
@@ -25,6 +25,22 @@ public class MySQLQueryBuilder implements QueryBuilder {
         }
 
         return query.toString();
+    }
+
+
+    @Override
+    public String buildInsertQuery(Object entity) {
+        return "";
+    }
+
+    @Override
+    public String buildUpdateQuery(Object entity, Map<String, Object> conditions) {
+        return "";
+    }
+
+    @Override
+    public String buildDeleteQuery(Class<?> entityClass, Map<String, Object> conditions) {
+        return "";
     }
 
     // 其他方法实现...

@@ -18,11 +18,11 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>nc.db</groupId>
-            <artifactId>database-sdk</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>nc.db</groupId>-->
+<!--            <artifactId>database-sdk</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
 
         <!-- 基础依赖 -->
         <dependency>

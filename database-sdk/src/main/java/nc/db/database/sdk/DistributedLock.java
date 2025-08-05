@@ -4,6 +4,10 @@ package nc.db.database.sdk;
 public class DistributedLock {
     private final DatabaseSDK databaseSDK;
 
+    public DistributedLock(DatabaseSDK databaseSDK) {
+        this.databaseSDK = databaseSDK;
+    }
+
     public boolean tryLock(String lockKey, long timeoutInSeconds) {
         long startTime = System.currentTimeMillis();
 
